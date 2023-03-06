@@ -20,15 +20,16 @@ public class CollectNewspaperKarel extends SuperKarel {
 		ReturnToStart();
 	}
 	private void MoveToNewspaper(){
-		while(noBeepersPresent()){
-			if( frontIsClear() )
+		while(noBeepersPresent())
+		{
+			if(frontIsClear())
 			{
 				move();
 			}
 			else
 			{
 				turnRight();
-				if(frontIsClear() ) 
+				if(frontIsClear()) 
 				{
 					move();
 					turnLeft();
@@ -41,11 +42,10 @@ public class CollectNewspaperKarel extends SuperKarel {
 					turnRight();
 				}
 			}
-			
 		}
 	}
 	private void PickItUp(){
-		if( beepersPresent() )
+		if(beepersPresent())
 		{
 			pickBeeper();
 			turnRight();
@@ -53,15 +53,15 @@ public class CollectNewspaperKarel extends SuperKarel {
 		}
 	}
 	private void ReturnToStart(){
-		while(frontIsClear() ){
+		while(frontIsClear())
+		{
 			move();
 			
 		}
-		if(frontIsBlocked() ){
+		if(frontIsBlocked())
+		{
 			turnRight();
 			move();
 		}
-		
 	}
-
 }
