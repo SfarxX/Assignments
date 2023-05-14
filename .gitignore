@@ -1,15 +1,6 @@
-.classpath
-.project
 FindRange.class
-as2/FindRange.java
+FindRange.java
 Hailstone.class
 Hailstone.java
-ProgramHierarchy.class
-ProgramHierarchy.java
-Pyramid.class
-Pyramid.java
 PythagoreanTheorem.class
 PythagoreanTheorem.java
-Target.class
-Target.java
-acm.jar
