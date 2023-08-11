@@ -11,20 +11,32 @@ import acm.program.*;
 import java.awt.*;
 
 public class Target extends GraphicsProgram {	
+	private static final double OuterRadius = 72;
+	private static final double WhiteRadius = OuterRadius * 0.65;
+	private static final double InnerRadius = OuterRadius * 0.3;
+	private static final double OuterStartPosition = 250;
 	public void run() {
 		/* You fill this in. */
-		double OuterRadius = 72;
-		double OuterStartPosition = 250;
+		printOuterCircle();
+		printWhiteCircle();
+		printInnerCircle();
+		}
+	private void printOuterCircle(){
 		GOval OuterCircle = new GOval(OuterStartPosition,OuterStartPosition, OuterRadius*2,OuterRadius*2);
 		OuterCircle.setFilled(true); OuterCircle.setColor(Color.RED);
-		double WhiteRadius = OuterRadius * 0.65; 
+		add(OuterCircle);
+	}
+	private void printWhiteCircle(){
 		double WhiteStartPosition = OuterStartPosition + OuterRadius-WhiteRadius;
 		GOval WhiteCircle = new GOval(WhiteStartPosition,WhiteStartPosition, WhiteRadius*2, WhiteRadius*2);
 		WhiteCircle.setFilled(true); WhiteCircle.setColor(Color.WHITE);
-		double InnerRadius = OuterRadius * 0.3;
-		double InnerStartPosition = WhiteStartPosition + WhiteRadius-InnerRadius;
+		add(WhiteCircle);
+	}
+	private void printInnerCircle(){
+		double InnerStartPosition = OuterStartPosition + OuterRadius-InnerRadius;
 		GOval InnerCircle = new GOval(InnerStartPosition, InnerStartPosition, InnerRadius*2, InnerRadius*2);
 		InnerCircle.setFilled(true); InnerCircle.setColor(Color.RED);
-		add(OuterCircle); add(WhiteCircle); add(InnerCircle);
+		add(InnerCircle);
 	}
+	
 }
